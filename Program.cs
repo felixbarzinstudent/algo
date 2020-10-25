@@ -120,6 +120,12 @@ namespace algo
             return results;
         }
 
+        /// <summary>
+        /// Retourne le plus grand entier trouvé dans un tableau d'entier
+        /// </summary>
+        /// <param name="array">Tableau d'entier</param>
+        /// <param name="arraySize">Taille du tableau</param>
+        /// <returns></returns>
         public int GetBiggestInt(int[] array, int arraySize) {
             var temp = Int32.MinValue;
             for (int i = 0; i < arraySize; i++)
@@ -133,6 +139,13 @@ namespace algo
             return temp;
         }
 
+        /// <summary>
+        /// Trouve la dernière occurence du plus grand entier présent dans un tableau et ensuite ajoute (indice - 1) à la valeur trouvée 
+        /// pour pouvoir retourné l'indice de fin du plus grand plateau à x valeurs près.
+        /// </summary>
+        /// <param name="array">Tableau d'entier qui doit contenir les indices de début des plateaux</param>
+        /// <param name="arraySize">Taille du tableau</param>
+        /// <returns></returns>
         public int GetIndex(int[] array, int arraySize) {
             var temp = default(int);
             var index = default(int);
