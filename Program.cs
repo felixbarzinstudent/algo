@@ -46,9 +46,11 @@ namespace algo
             while (i < arraySize - 1) { // arraySize - 1 car ca ne sert à rien de vérifier si la derniere valeur à un plateau plus grand que 1 puisque c'est impossible
                 int j = 0;
                 var tempBiggestPlate = default(int);
-                while(j < Constants.ValeurPres) {
+                var result = default(int);
+                var VALEURPRES = Constants.ValeurPres;
+                while(j < VALEURPRES) {
                     // Console.WriteLine($"Valeur repère : {array[i]}");
-                    var result = GetBiggestPlateByRange(array[i], i, array, arraySize, j);
+                    result = GetBiggestPlateByRange(array[i], i, array, arraySize, j);
                     if (result > tempBiggestPlate) {
                         tempBiggestPlate = result;
                     }
@@ -73,7 +75,7 @@ namespace algo
         }
         
         /// <summary>
-        /// Retourne le plus grand plateau (à x valeur près) dans un tableau, à partir d'une valeur
+        /// Retourne le plus grand plateau (à x valeur près) présent dans un tableau, à partir d'une valeur
         /// de départ, passée en paramètre.
         /// </summary>
         /// <param name="current">Valeur de départ</param>
