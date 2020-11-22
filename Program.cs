@@ -40,16 +40,11 @@ namespace algo
         /// <param name="arraySize">Taille du tableau d'entiers</param>
         /// <returns></returns>
         public int FindBiggestPlateIndex(int[] array, int arraySize) {
-            int i = 0;
-            var temp = default(int);
-            var index = default(int);
+            int i, temp, index, j, tempBiggestPlate, result;
+            i = temp = index = j = tempBiggestPlate = result = default(int);
+            int VALEURPRES = Constants.ValeurPres;
             while (i < arraySize - 1) { // arraySize - 1 car ca ne sert à rien de vérifier si la derniere valeur à un plateau plus grand que 1 puisque c'est impossible
-                int j = 0;
-                var tempBiggestPlate = default(int);
-                var result = default(int);
-                var VALEURPRES = Constants.ValeurPres;
                 while(j < VALEURPRES) {
-                    // Console.WriteLine($"Valeur repère : {array[i]}");
                     result = GetBiggestPlateByRange(array[i], i, array, arraySize, j);
                     if (result > tempBiggestPlate) {
                         tempBiggestPlate = result;
