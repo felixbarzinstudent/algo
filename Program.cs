@@ -95,19 +95,19 @@ namespace algo
         /// <param name="tempBiggestPlate">Variable temporaire permettant de garder une trace de la taille du plus grand plateau à 3 valeur près rencontré au cours de l'éxécution de la fonction</param>
         /// <returns></returns>
         public int FindBiggestPlateIndexRecursive(int[] array, int arraySize, int i = 0, int indexTemp = 0, int tempBiggestPlate = 0) {
-            if (i == arraySize - 1) {
+            if (arraySize == 1) {
                 return indexTemp + tempBiggestPlate;
             }
 
-            int resultBiggestPlate = GetBiggestPlateByRangeWrapper(array[i], i, array, arraySize);
+            int resultBiggestPlate = GetBiggestPlateByRangeWrapper(array[i], i, array, (arraySize + i));
             
             if (resultBiggestPlate >= tempBiggestPlate) {
                 indexTemp = i;
                 i++;
-                return FindBiggestPlateIndexRecursive(array, arraySize, i, indexTemp, resultBiggestPlate);
+                return FindBiggestPlateIndexRecursive(array, arraySize-1, i, indexTemp, resultBiggestPlate);
             } else {
                 i++;
-                return FindBiggestPlateIndexRecursive(array, arraySize, i, indexTemp, tempBiggestPlate);
+                return FindBiggestPlateIndexRecursive(array, arraySize-1, i, indexTemp, tempBiggestPlate);
             }
         }
 
