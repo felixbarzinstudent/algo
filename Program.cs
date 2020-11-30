@@ -103,12 +103,12 @@ namespace algo
             
             if (resultBiggestPlate >= tempBiggestPlate) {
                 indexTemp = i;
-                i++;
-                return FindBiggestPlateIndexRecursive(array, arraySize-1, i, indexTemp, resultBiggestPlate);
-            } else {
-                i++;
-                return FindBiggestPlateIndexRecursive(array, arraySize-1, i, indexTemp, tempBiggestPlate);
+                tempBiggestPlate = resultBiggestPlate;
             }
+
+            i++;
+            
+            return FindBiggestPlateIndexRecursive(array, arraySize-1, i, indexTemp, tempBiggestPlate);
         }
 
         /// <summary>
