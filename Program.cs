@@ -107,7 +107,7 @@ namespace algo
             }
 
             i++;
-            
+
             return FindBiggestPlateIndexRecursive(array, arraySize-1, i, indexTemp, tempBiggestPlate);
         }
 
@@ -128,12 +128,11 @@ namespace algo
             }
 
             int value = GetBiggestPlateByRange(current, indexCurrent, array, arraySize, rank);
-            rank++;
 
             if (value > temp) {
-                return GetBiggestPlateByRangeWrapper(current, indexCurrent, array, arraySize, rank, value);
+                return GetBiggestPlateByRangeWrapper(current, indexCurrent, array, arraySize, rank+1, value);
             } else {
-                return GetBiggestPlateByRangeWrapper(current, indexCurrent, array, arraySize, rank, temp);
+                return GetBiggestPlateByRangeWrapper(current, indexCurrent, array, arraySize, rank+1, temp);
             }
         }
 
